@@ -1,3 +1,4 @@
+import { match } from "assert";
 import { getRepository, Repository } from "typeorm";
 
 import { Statement } from "../entities/Statement";
@@ -46,9 +47,9 @@ export class StatementsRepository implements IStatementsRepository {
 
     const balance = statement.reduce((acc, operation) => {
       if (operation.type === 'deposit') {
-        return acc + operation.amount;
+        return acc + Number(operation.amount);
       } else {
-        return acc - operation.amount;
+        return Number(acc) - Number(operation.amount);
       }
     }, 0)
 
@@ -61,4 +62,5 @@ export class StatementsRepository implements IStatementsRepository {
 
     return { balance }
   }
+
 }

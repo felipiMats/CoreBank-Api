@@ -6,5 +6,7 @@ Pick<
   'user_id' |
   'description' |
   'amount' |
-  'type'
+  'type' |
+  'created_at' |
+  'updated_at' 
 >

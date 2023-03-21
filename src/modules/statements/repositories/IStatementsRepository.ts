@@ -3,6 +3,7 @@ import { ICreateStatementDTO } from "../useCases/createStatement/ICreateStatemen
 import { IGetBalanceDTO } from "../useCases/getBalance/IGetBalanceDTO";
 import { IGetStatementOperationDTO } from "../useCases/getStatementOperation/IGetStatementOperationDTO";
 
+
 export interface IStatementsRepository {
   create: (data: ICreateStatementDTO) => Promise<Statement>;
   findStatementOperation: (data: IGetStatementOperationDTO) => Promise<Statement | undefined>;
